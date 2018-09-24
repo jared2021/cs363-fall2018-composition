@@ -5,7 +5,6 @@
 // I pledge that I have neither given nor receieved any help
 // on this assignment.
 
-#include "Array.h"
 #include <stdexcept>         // for std::out_of_bounds exception
 
 //
@@ -13,8 +12,10 @@
 //
 template <typename T>
 Array <T>::Array (void)
+:cur_size_(0),
+ max_size_(10)
 {
-
+	T *data_=new T [max_size_];
 }
 
 //
@@ -22,8 +23,10 @@ Array <T>::Array (void)
 //
 template <typename T>
 Array <T>::Array (size_t length)
+:cur_size_(0),
+ max_size_(length)
 {
-
+	T *data_=new T [max_size_];
 }
 
 //
@@ -31,8 +34,14 @@ Array <T>::Array (size_t length)
 //
 template <typename T>
 Array <T>::Array (size_t length, T fill)
+:cur_size_(length),
+ max_size_(length)
 {
-
+	T *data_=new T [max_size_];
+	for(int i=0;i<cur_size_;++i)
+	{
+		data_[i]=fill;
+	}
 }
 
 //
@@ -40,8 +49,14 @@ Array <T>::Array (size_t length, T fill)
 //
 template <typename T>
 Array <T>::Array (const Array & array)
+:cur_size_((array).size()),
+ max_size_((array).max_size())
 {
-
+	T *data_=new T [max_size_];
+	for(int i=0;i<cur_size_;++i)
+	{
+		data_[i]=(array).data_[i];
+	}
 }
 
 //
@@ -50,7 +65,7 @@ Array <T>::Array (const Array & array)
 template <typename T>
 Array <T>::~Array (void)
 {
-
+	delete *data_;
 }
 
 //
@@ -59,7 +74,18 @@ Array <T>::~Array (void)
 template <typename T>
 const Array <T> & Array <T>::operator = (const Array & rhs)
 {
-
+	if(this==&rhs)
+	{
+		return *this;
+	}
+	else
+	{
+		for(int i=0;i<cur_size_;++i)
+		{
+			data_[i]=(rhs).data_[i];
+		}
+		return *this;
+	}
 }
 
 //
@@ -68,7 +94,14 @@ const Array <T> & Array <T>::operator = (const Array & rhs)
 template <typename T>
 T & Array <T>::operator [] (size_t index)
 {
-
+	if(index>max_size_)
+	{
+		throw std::out_of_range("That index is bigger than the array itself.");
+	}
+	else
+	{
+		return data_[index];
+	}
 }
 
 //
@@ -77,7 +110,14 @@ T & Array <T>::operator [] (size_t index)
 template <typename T>
 const T & Array <T>::operator [] (size_t index) const
 {
-
+	if(index>max_size_)
+	{
+		throw std::out_of_range("That index is bigger than the array itself.");
+	}
+	else
+	{
+		return data_[index];
+	}
 }
 
 //
@@ -86,7 +126,14 @@ const T & Array <T>::operator [] (size_t index) const
 template <typename T>
 T Array <T>::get (size_t index) const
 {
-
+	if(index>max_size_)
+	{
+		throw std::out_of_range("That index is bigger than the array itself.");
+	}
+	else
+	{
+		return data_[index];
+	}
 }
 
 //
@@ -95,7 +142,14 @@ T Array <T>::get (size_t index) const
 template <typename T>
 void Array <T>::set (size_t index, T value)
 {
-
+	if(index>max_size_)
+	{
+		throw std::out_of_range("That index is bigger than the array itself.");
+	}
+	else
+	{
+		data_[index]=value;
+	}
 }
 
 //
@@ -104,7 +158,25 @@ void Array <T>::set (size_t index, T value)
 template <typename T>
 void Array <T>::resize (size_t new_size)
 {
-
+	//T new_data_[new_size]
+	if(new_size>max_size_)
+	{
+		T new_data_[new_size];
+		for(int i=0;i<max_size_;++i)
+		{
+			new_data_[i]=data_[i];
+		}
+		T *data_=new T [new_size];
+		max_size_=new_size;
+		for(int i=0;i<max_size_;++i)
+		{
+			data_[i]=new_data_[i];
+		}
+	}
+	else
+	{
+		cur_size_=new_size;
+	}
 }
 
 //
@@ -113,7 +185,25 @@ void Array <T>::resize (size_t new_size)
 template  <typename T>
 int Array <T>::find (T value) const
 {
-
+	bool found=false;
+	int i=0;
+	while(i<cur_size_)
+	{
+		if(data_[i]==value)
+		{
+			return i;
+			found=true;
+			i=cur_size_;
+		}
+		else
+		{
+			i=i+1;
+		}
+	}
+	if(found==false)
+	{
+		return -1;
+	}
 }
 
 //
@@ -122,7 +212,32 @@ int Array <T>::find (T value) const
 template <typename T>
 int Array <T>::find (T val, size_t start) const
 {
-
+	if(start>cur_size_)
+	{
+		throw std::out_of_range("That index is bigger than the array itself.");
+	}
+	else
+	{
+		bool found=false;
+		int i=start;
+		while(i<cur_size_)
+		{
+			if(data_[i]==val)
+			{
+				found=true;
+				return i;
+				i=cur_size_;
+			}
+			else
+			{
+				i=i+1;
+			}
+		}
+		if(found==false)
+		{
+			return -1;
+		}
+	}
 }
 
 //
@@ -131,7 +246,32 @@ int Array <T>::find (T val, size_t start) const
 template <typename T>
 bool Array <T>::operator == (const Array & rhs) const
 {
-
+	if(this==&rhs)
+	{
+		return true;
+	}
+	else
+	{
+		bool equal=true;
+		int i=0;
+		while(i<cur_size_)
+		{
+			if(data_[i]!=(rhs).data_[i])
+			{
+				equal=false;
+				i=cur_size_;
+				return false;
+			}
+			else
+			{
+				i=i+i;
+			}
+		}
+		if(equal==true)
+		{
+			return true;
+		}
+	}
 }
 
 //
@@ -140,7 +280,7 @@ bool Array <T>::operator == (const Array & rhs) const
 template <typename T>
 bool Array <T>::operator != (const Array & rhs) const
 {
-
+	return !((*this)==rhs);
 }
 
 //
@@ -149,5 +289,9 @@ bool Array <T>::operator != (const Array & rhs) const
 template <typename T>
 void Array <T>::fill (T value)
 {
-
+	for(int i=0;i<max_size_;++i)
+	{
+		data_[i]=value;
+		cur_size_=max_size_;
+	}
 }
