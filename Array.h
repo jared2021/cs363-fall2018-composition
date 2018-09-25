@@ -131,7 +131,7 @@ public:
    *
    * @param[in]       new_size              New size of the array
    */
-  void resize (size_t new_size);
+  virtual void resize (size_t new_size);
 
   /**
    * Locate the specified character in the array. The index of the first
@@ -186,7 +186,7 @@ public:
 
 private:
   /// Pointer to the actual data.
-  char * data_;
+  char* data_;
 
   /// Current size of the array.
   size_t cur_size_;

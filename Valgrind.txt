@@ -1,0 +1,29 @@
+==79664== Memcheck, a memory error detector
+==79664== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==79664== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==79664== Command: ./a.out
+==79664== Parent PID: 76901
+==79664== 
+==79664== 
+==79664== HEAP SUMMARY:
+==79664==     in use at exit: 44 bytes in 2 blocks
+==79664==   total heap usage: 2 allocs, 0 frees, 44 bytes allocated
+==79664== 
+==79664== 20 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==79664==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==79664==    by 0x4008D5: Array<int>::Array(unsigned long) (in /home/jascho/cs36300-fall2018-composition/a.out)
+==79664==    by 0x40080D: main (in /home/jascho/cs36300-fall2018-composition/a.out)
+==79664== 
+==79664== 24 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==79664==    at 0x4C2A1E3: operator new(unsigned long) (vg_replace_malloc.c:334)
+==79664==    by 0x4007FD: main (in /home/jascho/cs36300-fall2018-composition/a.out)
+==79664== 
+==79664== LEAK SUMMARY:
+==79664==    definitely lost: 44 bytes in 2 blocks
+==79664==    indirectly lost: 0 bytes in 0 blocks
+==79664==      possibly lost: 0 bytes in 0 blocks
+==79664==    still reachable: 0 bytes in 0 blocks
+==79664==         suppressed: 0 bytes in 0 blocks
+==79664== 
+==79664== For counts of detected and suppressed errors, rerun with: -v
+==79664== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
