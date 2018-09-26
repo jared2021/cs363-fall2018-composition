@@ -13,9 +13,9 @@
 template <typename T>
 Array <T>::Array (void)
 :cur_size_(0),
- max_size_(10)
+ max_size_(0)
 {
-	T data_=new T [max_size_];
+	T *data_=new T [max_size_];
 }
 
 //
@@ -26,7 +26,7 @@ Array <T>::Array (size_t length)
 :cur_size_(0),
  max_size_(length)
 {
-	T data_=new T [max_size_];
+	T *data_=new T [max_size_];
 }
 
 //
@@ -37,7 +37,7 @@ Array <T>::Array (size_t length, T fill)
 :cur_size_(length),
  max_size_(length)
 {
-	T data_=new T [max_size_];
+	T *data_=new T [max_size_];
 	for(int i=0;i<cur_size_;++i)
 	{
 		data_[i]=fill;
@@ -52,7 +52,7 @@ Array <T>::Array (const Array & array)
 :cur_size_((array).size()),
  max_size_((array).max_size())
 {
-	T data_=new T [max_size_];
+	T *data_=new T [max_size_];
 	for(int i=0;i<cur_size_;++i)
 	{
 		data_[i]=(array).data_[i];
@@ -65,7 +65,7 @@ Array <T>::Array (const Array & array)
 template <typename T>
 Array <T>::~Array (void)
 {
-	delete data_;
+	delete *data_;
 }
 
 //
@@ -158,7 +158,6 @@ void Array <T>::set (size_t index, T value)
 template <typename T>
 void Array <T>::resize (size_t new_size)
 {
-	//T new_data_[new_size]
 	if(new_size>max_size_)
 	{
 		T new_data_[new_size];
@@ -166,17 +165,18 @@ void Array <T>::resize (size_t new_size)
 		{
 			new_data_[i]=data_[i];
 		}
-		T *data_=new T [new_size];
-		max_size_=new_size;
-		for(int i=0;i<max_size_;++i)
-		{
-			data_[i]=new_data_[i];
-		}
+		//T *data_=new T [new_size];
+		//max_size_=new_size;
+		//for(int i=0;i<max_size_;++i)
+		//{
+			//data_[i]=new_data_[i];
+		//}
+		//delete new_data_;
 	}
-	else
-	{
-		cur_size_=new_size;
-	}
+	//else
+	//{
+		//cur_size_=new_size;
+	//}
 }
 
 //
