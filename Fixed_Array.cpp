@@ -10,7 +10,7 @@
 //Default constructor
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (void)
-:cur_size_(0),
+:cur_size_(0),	
  max_size_(0)
 {
 	T *data_=new T [max_size_];

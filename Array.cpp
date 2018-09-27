@@ -13,7 +13,7 @@
 template <typename T>
 Array <T>::Array (void)
 :cur_size_(0),
- max_size_(0)
+ max_size_(1)
 {
 	T *data_=new T [max_size_];
 }
@@ -65,7 +65,7 @@ Array <T>::Array (const Array & array)
 template <typename T>
 Array <T>::~Array (void)
 {
-	delete *data_;
+	delete data_;
 }
 
 //
@@ -161,21 +161,23 @@ void Array <T>::resize (size_t new_size)
 	if(new_size>max_size_)
 	{
 		std::cout<<"Resizing array.";
-		T new_data_ [cur_size_];
+		T temp [new_size];
 		for(int i=0;i==cur_size_;++i)
 		{
-			new_data_[i]=data_[i];
+			temp[i]=data_[i];
 		}
+		cur_size_=new_size;
 		max_size_=new_size;
-		T *data_=new T [max_size_];
-		for(int i=0;i<max_size_;++i)
+		//T *data_=new T [max_size_];
+		for(int i=0;i==max_size_;++i)
 		{
-			data_[i]=new_data_[i];
+			data_[i]=temp[i];
 		}
 	}
 	else
 	{
 		cur_size_=new_size;
+		max_size_=new_size;
 	}
 }
 
@@ -253,20 +255,14 @@ bool Array <T>::operator == (const Array & rhs) const
 	}
 	else if(this!=&rhs)
 	{
-		std::cout<<"comparing arrays."<<'\n';
-		//bool equal=true;
-		int i=0;
 		for(int i=0;i<cur_size_;++i)
 		{
 			if(data_[i]!=(rhs).data_[i])
 			{
 				equal=false;
+				return false;
 			}
 		}
-		//if(equal==true)
-		//{
-			//return true;
-		//}
 	}
 	if(equal==true)
 	{
