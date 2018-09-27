@@ -40,14 +40,14 @@ Stack <T>::~Stack (void)
 template <typename T>
 void Stack <T>::push (T element)
 {
-	if((*myArray).cur_size_!=(*myArray).max_size)
+	if((*myArray).size()!=(*myArray).max_size())
 	{
-		(*myArray).data[(*myArray).cur_size_]=element;
-		(*myArray).cur_size_=(*myArray).cur_size_+1;
+		(*this->myArray).data_[(*this->myArray).cur_size_]=element;
+		(*this->myArray).cur_size_=(*this->myArray).size()+1;
 	}
 	else
 	{
-		
+		throw std::out_of_range("Stack is full cannot push any more.");
 	}
 }
 //
@@ -60,6 +60,10 @@ void Stack <T>::pop (void)
 	{
 		(*myArray).cur_size_=(*myArray).cur_size_-1;
 	}
+	else
+	{
+		throw std::out_of_range("No items in stack to pop.");
+	}
 }
 //
 // operator =
@@ -67,7 +71,18 @@ void Stack <T>::pop (void)
 template <typename T>
 const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 {
-
+	if(this==&rhs)
+	{
+		return *this;
+	}
+	else
+	{
+		for(int i=0;i<(*myArray).cur_size_;++i)
+		{
+			(*myArray).data_[i]=(rhs).data_[i];
+		}
+		return *this;
+	}
 }
 
 //
@@ -76,5 +91,5 @@ const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 template <typename T>
 void Stack <T>::clear (void)
 {
-
+	(*myArray).cur_size_=0;
 }
