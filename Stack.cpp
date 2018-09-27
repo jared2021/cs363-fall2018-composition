@@ -1,4 +1,4 @@
-// $Id: Stack.cpp 827 2011-02-07 14:20:53Z hillj $
+// $Id: ``Stack.cpp 827 2011-02-07 14:20:53Z hillj $
 
 // Honor Pledge:
 //
@@ -10,8 +10,9 @@
 //
 template <typename T>
 Stack <T>::Stack (void)
+:myArray(new Array<T>)
 {
-	*myArray= new Array <T>();	
+		
 }
 
 //
@@ -19,8 +20,9 @@ Stack <T>::Stack (void)
 //
 template <typename T>
 Stack <T>::Stack (const Stack & stack)
+:myArray(new Array<T> (*stack.myArray))
 {
-	//*myArray= new Array()
+
 }
 
 //
@@ -38,18 +40,27 @@ Stack <T>::~Stack (void)
 template <typename T>
 void Stack <T>::push (T element)
 {
-
+	if((*myArray).cur_size_!=(*myArray).max_size)
+	{
+		(*myArray).data[(*myArray).cur_size_]=element;
+		(*myArray).cur_size_=(*myArray).cur_size_+1;
+	}
+	else
+	{
+		
+	}
 }
-
 //
 // pop
 //
 template <typename T>
 void Stack <T>::pop (void)
 {
-
+	if((*myArray).cur_size_!=0)
+	{
+		(*myArray).cur_size_=(*myArray).cur_size_-1;
+	}
 }
-
 //
 // operator =
 //

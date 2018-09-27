@@ -66,6 +66,7 @@ public:
   template <size_t M>
   const Fixed_Array & operator = (const Fixed_Array <T, M> & rhs);
 
+  virtual int resize ();
 };
 
 // include the inline files

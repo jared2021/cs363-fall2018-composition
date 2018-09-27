@@ -107,11 +107,11 @@ public:
   /// Remove all elements from the stack.
   void clear (void);
 
+  Array<T> *myArray;
+
 private:
   // add member variable here
-  int top;
 
-  T Array *myArray;
 };
 
 // include the inline files

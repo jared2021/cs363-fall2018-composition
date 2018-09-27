@@ -183,7 +183,7 @@ public:
    * @param[in]       ch                   Fill character
    */
   void fill (T element);
-
+protected:
   /// Pointer to the actual data.
   T* data_;
 

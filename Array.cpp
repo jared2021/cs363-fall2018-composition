@@ -12,10 +12,11 @@
 //
 template <typename T>
 Array <T>::Array (void)
-:cur_size_(0),
- max_size_(1)
+:data_(new T[max_size_]),
+ cur_size_(0),
+ max_size_(10)
 {
-	T *data_=new T [max_size_];
+	
 }
 
 //
@@ -23,10 +24,11 @@ Array <T>::Array (void)
 //
 template <typename T>
 Array <T>::Array (size_t length)
-:cur_size_(0),
+:data_(new T[length]),
+ cur_size_(0),
  max_size_(length)
 {
-	T *data_=new T [max_size_];
+
 }
 
 //
@@ -34,10 +36,10 @@ Array <T>::Array (size_t length)
 //
 template <typename T>
 Array <T>::Array (size_t length, T fill)
-:cur_size_(length),
+:data_(new T[length]),
+ cur_size_(length),
  max_size_(length)
 {
-	T *data_=new T [max_size_];
 	for(int i=0;i<cur_size_;++i)
 	{
 		data_[i]=fill;
@@ -50,9 +52,9 @@ Array <T>::Array (size_t length, T fill)
 template <typename T>
 Array <T>::Array (const Array & array)
 :cur_size_((array).size()),
- max_size_((array).max_size())
+ max_size_((array).max_size()),
+ data_(new T[max_size_])
 {
-	T *data_=new T [max_size_];
 	for(int i=0;i<cur_size_;++i)
 	{
 		data_[i]=(array).data_[i];
@@ -161,15 +163,18 @@ void Array <T>::resize (size_t new_size)
 	if(new_size>max_size_)
 	{
 		std::cout<<"Resizing array.";
-		T temp [new_size];
-		for(int i=0;i==cur_size_;++i)
+		T *temp= new T [new_size];
+		for(int i=0;i<cur_size_;++i)
 		{
 			temp[i]=data_[i];
 		}
-		cur_size_=new_size;
+		for(int i=0;i<cur_size_;++i)
+		{
+			std::cout<<temp[i];
+		}
 		max_size_=new_size;
-		//T *data_=new T [max_size_];
-		for(int i=0;i==max_size_;++i)
+		T *data_=new T [max_size_];
+		for(int i=0;i<max_size_;++i)
 		{
 			data_[i]=temp[i];
 		}
@@ -253,11 +258,15 @@ bool Array <T>::operator == (const Array & rhs) const
 	{
 		return true;
 	}
+	else if((data_).cur_size_!=(rhs).cur_size_)
+	{
+		return false;
+	}
 	else if(this!=&rhs)
 	{
 		for(int i=0;i<cur_size_;++i)
 		{
-			if(data_[i]!=(rhs).data_[i])
+		 	if(data_[i]!=(rhs).data_[i])
 			{
 				equal=false;
 				return false;

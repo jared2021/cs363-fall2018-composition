@@ -10,10 +10,9 @@
 //Default constructor
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (void)
-:cur_size_(0),	
- max_size_(0)
+:Array<T>(N)
 {
-	T *data_=new T [max_size_];
+
 }
 
 //
@@ -25,13 +24,11 @@ Fixed_Array <T, N>::Fixed_Array (void)
  */
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, N> & arr)
-:cur_size_((arr).size()),
- max_size_((arr).max_size())
+:Array<T>(*this)
 {
-	T *data_=new T [max_size_];
-	for(int i=0;i<cur_size_;++i)
+	for(int i=0;i<(*this).cur_size_;++i)
 	{
-		data_[i]=(arr).data_[i];
+		(*this).data_[i]=(arr).data_[i];
 	}
 }
 
@@ -41,18 +38,17 @@ Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, N> & arr)
  * Initializing constructor. The source array can be of any size
  * as long as they are of the same type.
  *
- * @param[in]	arr 	Source array
+ * @param[in]	arr 	Source array of differnt size
+ *
  */
 template <typename T, size_t N>
 template <size_t M>
 Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, M> & arr)
-:cur_size_((arr).size()),
- max_size_((arr).max_size())
+:Array<T>(*this)
 {
-	T *data_=new T [max_size_];
-	for(int i=0;i<cur_size_;++i)
+	for(int i=0;i<(*this).cur_size_;++i)
 	{
-		data_[i]=(arr).data_[i];
+		(*this).data_[i]=(arr).data_[i];
 	}
 }
 
@@ -66,23 +62,17 @@ Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, M> & arr)
  */
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (T fill)
-:cur_size_(N)
- max_size_(N)
+:Array<T>(N,fill)
 {
-	T *data_=new T [max_size_];
-	for(int i=0;i<cur_size_;++i)
-	{
-		data_[i]=fill;
-	}
-}
 
+}
 //
 // ~Fixed_Array
 //Destructor
 template <typename T, size_t N>
 Fixed_Array <T, N>::~Fixed_Array (void)
 {
-	delete data_;
+	delete (*this).data_;
 }
 
 //
@@ -101,9 +91,9 @@ const Fixed_Array <T, N> & Fixed_Array <T, N>::operator = (const Fixed_Array <T,
 	}
 	else
 	{
-		for(int i=0;i<cur_size_;++i)
+		for(int i=0;i<(*this).cur_size_;++i)
 		{
-			data_[i]=(rhs).data_[i];
+			(*this).data_[i]=(rhs).data_[i];
 		}
 		return *this;
 	}
@@ -114,7 +104,7 @@ const Fixed_Array <T, N> & Fixed_Array <T, N>::operator = (const Fixed_Array <T,
 /**
  * Assignment operator
  *
- * @param[in]	rhs	Right-hand side of operator.
+ * @param[in]	rhs	Right-hand side of operator of different size.
  */
 template <typename T, size_t N>
 template <size_t M>
@@ -126,15 +116,15 @@ const Fixed_Array <T, N> & Fixed_Array <T, N>::operator = (const Fixed_Array <T,
 	}
 	else
 	{
-		for(int i=0;i<cur_size_;++i)
+		for(int i=0;i<(*this).cur_size_;++i)
 		{
-			data_[i]=(rhs).data_[i];
+			(*this).data_[i]=(rhs).data_[i];
 		}
 		return *this;
 	}
 }
 template <typename T, size_t N>
-void Fixed_Array <typename T, size_t N>::resize (size_t new_size)
+int Fixed_Array <T,N>::resize ()
 {
-	return -1;
+	return 0;
 }
