@@ -74,12 +74,16 @@ public:
    */
   size_t size (void) const;
 
+  void set_size (size_t n);
+
   /**
    * Retrieve the maximum size of the array.
    *
    * @return          The maximum size
    */
   size_t max_size (void) const;
+
+  void set_max_size (size_t n);
 
   /**
    * Get the character at the specified index. If the index is not

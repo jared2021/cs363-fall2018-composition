@@ -70,14 +70,49 @@ int main()
 	Fixed_Array <int, 5> *f_array= new Fixed_Array <int, 5>();
 	Fixed_Array <int, 5> *c_array= new Fixed_Array <int, 5>(5);
 	f_array=c_array;
-	for (int i=0; i<(*f_array).size();++i)
+	//for (int i=0; i<(*f_array).size();++i)
+	//{
+		//std::cout<<(*f_array)[i];
+	//}
+	//std::cout<<'\n';
+	//for (int i=0;i<(*c_array).size();++i)
+	//{
+		//std::cout<<(*c_array)[i];
+	//}
+	//std::cout<<'\n';
+	Fixed_Array <int, 5> *copy_array= new Fixed_Array<int, 5>(*c_array);
+	//for(int i=0;i<(*copy_array).size();++i)
+	//{
+		//std::cout<<(*copy_array)[i];
+	//}
+	//std::cout<<'\n';
+	Stack <int> *myStack= new Stack <int>();
+	//(*myStack).pop();
+	(*myStack).push(5);
+	Stack <int> *copyStack= new Stack<int>(*myStack);
+	for(int i=0;i<(*myStack->myArray).size();++i)
 	{
-		std::cout<<(*f_array)[i];
+		std::cout<<(*myStack->myArray)[i];
 	}
 	std::cout<<'\n';
-	for (int i=0;i<(*c_array).size();++i)
+	for(int i=0;i<(*copyStack->myArray).size();++i)
 	{
-		std::cout<<(*c_array)[i];
+		std::cout<<(*copyStack->myArray)[i];
 	}
-	//return 0;	
+	std::cout<<'\n';
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	(*copyStack).push(5);
+	//for(int i=0;i<(*copyStack).size();++i)
+	//{
+		//std::cout<<(*copyStack->myArray)[i];
+	//}
+	return 0;	
 }

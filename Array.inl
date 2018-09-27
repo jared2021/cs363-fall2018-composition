@@ -15,7 +15,12 @@ size_t Array <T>::size (void) const
 {
 	return cur_size_;
 }
-
+template <typename T>
+inline
+void Array <T>::set_size (size_t n)
+{
+	cur_size_=n;
+}
 //
 // max_size
 //
@@ -24,4 +29,10 @@ inline
 size_t Array <T>::max_size (void) const
 {
 	return max_size_;
+}
+template <typename T>
+inline
+void Array <T>::set_max_size (size_t n)
+{
+	max_size_=n;
 }
