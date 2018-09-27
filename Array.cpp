@@ -6,7 +6,7 @@
 // on this assignment.
 
 #include <stdexcept>         // for std::out_of_bounds exception
-
+#include <iostream>
 //
 // Array
 //
@@ -160,23 +160,23 @@ void Array <T>::resize (size_t new_size)
 {
 	if(new_size>max_size_)
 	{
-		T new_data_[new_size];
-		for(int i=0;i<max_size_;++i)
+		std::cout<<"Resizing array.";
+		T new_data_ [cur_size_];
+		for(int i=0;i==cur_size_;++i)
 		{
 			new_data_[i]=data_[i];
 		}
-		//T *data_=new T [new_size];
-		//max_size_=new_size;
-		//for(int i=0;i<max_size_;++i)
-		//{
-			//data_[i]=new_data_[i];
-		//}
-		//delete new_data_;
+		max_size_=new_size;
+		T *data_=new T [max_size_];
+		for(int i=0;i<max_size_;++i)
+		{
+			data_[i]=new_data_[i];
+		}
 	}
-	//else
-	//{
-		//cur_size_=new_size;
-	//}
+	else
+	{
+		cur_size_=new_size;
+	}
 }
 
 //
@@ -246,31 +246,31 @@ int Array <T>::find (T val, size_t start) const
 template <typename T>
 bool Array <T>::operator == (const Array & rhs) const
 {
+	bool equal=true;
 	if(this==&rhs)
 	{
 		return true;
 	}
-	else
+	else if(this!=&rhs)
 	{
-		bool equal=true;
+		std::cout<<"comparing arrays."<<'\n';
+		//bool equal=true;
 		int i=0;
-		while(i<cur_size_)
+		for(int i=0;i<cur_size_;++i)
 		{
 			if(data_[i]!=(rhs).data_[i])
 			{
 				equal=false;
-				i=cur_size_;
-				return false;
-			}
-			else
-			{
-				i=i+i;
 			}
 		}
-		if(equal==true)
-		{
-			return true;
-		}
+		//if(equal==true)
+		//{
+			//return true;
+		//}
+	}
+	if(equal==true)
+	{
+		return true;
 	}
 }
 

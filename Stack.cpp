@@ -11,7 +11,7 @@
 template <typename T>
 Stack <T>::Stack (void)
 {
-
+	*myArray= new Array <T>();	
 }
 
 //
@@ -20,7 +20,7 @@ Stack <T>::Stack (void)
 template <typename T>
 Stack <T>::Stack (const Stack & stack)
 {
-
+	//*myArray= new Array()
 }
 
 //
@@ -29,7 +29,7 @@ Stack <T>::Stack (const Stack & stack)
 template <typename T>
 Stack <T>::~Stack (void)
 {
-
+	delete (*myArray);
 }
 
 //

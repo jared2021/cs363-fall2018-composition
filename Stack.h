@@ -109,6 +109,9 @@ public:
 
 private:
   // add member variable here
+  int top;
+
+  T Array *myArray;
 };
 
 // include the inline files

@@ -1,29 +1,48 @@
 #include <iostream>
 #include "Array.h"
-#include "Fixed_Array.h"
+//#include "Fixed_Array.h"
 
 int main()
 {
-	//Array* <char> char_array=new char Array(5,1);
-	//delete (*int_array);
-	//Array <int> int_array_two (5,1);
-	//int_array.resize(10);
-	//if(int_array==int_array_two)
-	//{
-		//std::cout<<"These arrays are equal.";
-	//}
-	//else
-	//{
-		//std::cout<<"These arrays are not equal.";
-	//}
-	//int_array_two.resize(10);
-	//if(int_array!=int_array_two)
-	//{
-		//std::cout<<"These arrays are not equal.";
-	//}
-	//else
-	//{
-		//std::cout<<"These arrays are equal";
-	//}
-	//return 0;	
+	Array <char> *char_array=new Array <char>(5,1);
+	for(int i=0; i==(*char_array).size();++i)
+	{
+		std::cout<<(*char_array)[i];
+	}
+	std::cout<<'\n';
+	Array <char> *char_array_two=new Array <char> (5,1);
+//	Fixed_Array <char> *char_fixed_array= new Array <char> (5);
+	if(char_array==char_array_two)
+	{
+		std::cout<<"These arrays are equal."<<'\n';
+	}
+	(*char_array).resize(10);
+	if(char_array==char_array_two)
+	{
+		std::cout<<"These arrays are equal."<<'\n';
+	}
+	else
+	{
+		std::cout<<"These arrays are not equal."<<'\n';
+	}
+	for(int i=0;i==5;++i)
+	{
+		std::cout<<(*char_array)[i];
+	}
+	std::cout<<'\n';
+	for(int i=0;i==(*char_array_two).size();++i)
+	{
+		std::cout<<(*char_array_two)[i];
+	}
+	std::cout<<'\n';
+	(*char_array_two).resize(10);
+	if(char_array!=char_array_two)
+	{
+		std::cout<<"These arrays are not equal."<<'\n';
+	}
+	else
+	{
+		std::cout<<"These arrays are equal"<<'\n';
+	}
+	return 0;	
 }

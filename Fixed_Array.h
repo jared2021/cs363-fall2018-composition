@@ -65,6 +65,7 @@ public:
    */
   template <size_t M>
   const Fixed_Array & operator = (const Fixed_Array <T, M> & rhs);
+
 };
 
 // include the inline files

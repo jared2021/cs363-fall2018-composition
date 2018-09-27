@@ -184,7 +184,6 @@ public:
    */
   void fill (T element);
 
-private:
   /// Pointer to the actual data.
   char* data_;
 
