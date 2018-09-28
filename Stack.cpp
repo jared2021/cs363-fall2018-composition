@@ -31,7 +31,7 @@ Stack <T>::Stack (const Stack & stack)
 template <typename T>
 Stack <T>::~Stack (void)
 {
-	delete (*myArray);
+	(*this->myArray).delete_data_();
 }
 
 //

@@ -33,6 +33,7 @@ public:
    * Exception thrown to indicate the stack is empty.
    */
   class empty_exception : public std::exception
+//make it inherit from a child class like logic error
   {
   public:
     /// Default constructor.

@@ -85,6 +85,7 @@ public:
 
   void set_max_size (size_t n);
 
+  void delete_data_ ();
   /**
    * Get the character at the specified index. If the index is not
    * within the range of the array, then std::out_of_range exception

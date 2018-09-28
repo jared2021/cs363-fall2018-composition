@@ -36,3 +36,9 @@ void Array <T>::set_max_size (size_t n)
 {
 	max_size_=n;
 }
+template <typename T>
+inline 
+void Array <T>::delete_data_ ()
+{
+        delete data_;
+}
