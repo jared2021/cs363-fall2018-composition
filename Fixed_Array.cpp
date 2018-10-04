@@ -4,13 +4,12 @@
 //
 // I pledge that I have neither given nor received any help
 // on this assignment.
-//#include "Array_Base.h"
 //
 // Fixed_Array
 //Default constructor
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (void)
-:Array<T>(N)
+:Array_Base<T>()
 {
 
 }
@@ -24,27 +23,7 @@ Fixed_Array <T, N>::Fixed_Array (void)
  */
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, N> & arr)
-:Array<T>(*this)
-{
-	for(int i=0;i<(*this).cur_size_;++i)
-	{
-		(*this).data_[i]=(arr).data_[i];
-	}
-}
-
-//
-// Fixed_Array
-/**
- * Initializing constructor. The source array can be of any size
- * as long as they are of the same type.
- *
- * @param[in]	arr 	Source array of differnt size
- *
- */
-template <typename T, size_t N>
-template <size_t M>
-Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, M> & arr)
-:Array<T>(*this)
+:Array_Base<T>(arr)
 {
 	for(int i=0;i<(*this).cur_size_;++i)
 	{
@@ -62,7 +41,7 @@ Fixed_Array <T, N>::Fixed_Array (const Fixed_Array <T, M> & arr)
  */
 template <typename T, size_t N>
 Fixed_Array <T, N>::Fixed_Array (T fill)
-:Array<T>(N,fill)
+:Array_Base<T>(N,fill)
 {
 
 }
@@ -72,7 +51,7 @@ Fixed_Array <T, N>::Fixed_Array (T fill)
 template <typename T, size_t N>
 Fixed_Array <T, N>::~Fixed_Array (void)
 {
-	delete (*this).data_;
+	
 }
 
 //

@@ -28,9 +28,8 @@ Queue <T>::Queue (const Queue & queue)
 
 template <typename T>
 Queue <T>::~Queue (void)
-:delete (*this_>myArray)
 {
-	
+	delete myArray;	
 }
 
 

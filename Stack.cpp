@@ -5,7 +5,6 @@
 // I pledge that I have neither given nor received any help
 // on this assignment.
 
-//
 // Stack
 //
 template <typename T>
@@ -22,7 +21,7 @@ template <typename T>
 Stack <T>::Stack (const Stack & stack)
 :myArray(new Array<T> (*stack.myArray))
 {
-
+	
 }
 
 //
@@ -30,9 +29,8 @@ Stack <T>::Stack (const Stack & stack)
 //
 template <typename T>
 Stack <T>::~Stack (void)
-:delete (*this->myArray)
 {
-	
+	delete myArray;		
 }
 
 //
@@ -43,7 +41,7 @@ void Stack <T>::push (T element)
 {
 	if((*this->myArray).size()!=(*this->myArray).max_size())
 	{
-		(*this->myArray).set((*this->myArray).size(),element);
+		(*myArray).set((*this->myArray).size(),element);
 		(*myArray).set_size((*this->myArray).size()+1);
 	}
 	else if ((*this->myArray).size()==(*this->myArray).max_size())
