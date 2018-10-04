@@ -4,7 +4,7 @@
 //
 // I pledge that I have neither given nor received any help
 // on this assignment.
-#include "Array.h"
+//#include "Array_Base.h"
 //
 // Fixed_Array
 //Default constructor
@@ -99,32 +99,3 @@ const Fixed_Array <T, N> & Fixed_Array <T, N>::operator = (const Fixed_Array <T,
 	}
 }
 
-//
-// operator =
-/**
- * Assignment operator
- *
- * @param[in]	rhs	Right-hand side of operator of different size.
- */
-template <typename T, size_t N>
-template <size_t M>
-const Fixed_Array <T, N> & Fixed_Array <T, N>::operator = (const Fixed_Array <T, M> & rhs)
-{
-	if(this==&rhs)
-	{
-		return *this;
-	}
-	else
-	{
-		for(int i=0;i<(*this).cur_size_;++i)
-		{
-			(*this).data_[i]=(rhs).data_[i];
-		}
-		return *this;
-	}
-}
-template <typename T, size_t N>
-int Fixed_Array <T,N>::resize ()
-{
-	return 0;
-}

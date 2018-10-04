@@ -18,7 +18,6 @@
 #define _ARRAY_H_
 
 #include <cstring>          // for size_t definition
-
 /**
  * @class Array
  *
@@ -136,7 +135,9 @@ public:
    *
    * @param[in]       new_size              New size of the array
    */
-  virtual void resize (size_t new_size);
+  void resize (size_t new_size);
+
+  void shrink ();
 
   /**
    * Locate the specified character in the array. The index of the first

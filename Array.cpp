@@ -7,6 +7,7 @@
 
 #include <stdexcept>         // for std::out_of_bounds exception
 #include <iostream>
+#include "Array_Base.h"
 //
 // Array
 //
@@ -186,6 +187,14 @@ void Array <T>::resize (size_t new_size)
 	}
 }
 
+template <typename T>
+void Array <T>::shrink(void)
+{
+	if(cur_size_<max_size_)
+	{
+		max_size_=cur_size_;
+	}
+}
 //
 // find (char)
 //
@@ -253,7 +262,6 @@ int Array <T>::find (T val, size_t start) const
 template <typename T>
 bool Array <T>::operator == (const Array & rhs) const
 {
-	bool equal=true;
 	if(this==&rhs)
 	{
 		return true;
@@ -262,20 +270,26 @@ bool Array <T>::operator == (const Array & rhs) const
 	{
 		return false;
 	}
-	else if(this!=&rhs)
+	else
 	{
+		bool equal=true;
 		for(int i=0;i<cur_size_;++i)
 		{
-		 	if(data_[i]!=(rhs).data_[i])
+			if(this.get(i)!=(*rhs).get(i))
 			{
 				equal=false;
 				return false;
 			}
+			else
+			{
+				equal=true;
+			}
 		}
-	}
-	if(equal==true)
-	{
-		return true;
+		if(equal==true)
+		{
+			return true;
+		}
+
 	}
 }
 
