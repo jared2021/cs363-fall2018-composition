@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Array.h"
-#include "Fixed_Array.h"
-#include "Stack.h"
-#include "Queue.h"
+//#include "Fixed_Array.h"
+//#include "Stack.h"
+//#include "Queue.h"
 int main()
 {
 	Array <char> *char_array=new Array <char>(5,'1');
@@ -68,7 +68,7 @@ int main()
 	//{
 		//std::cout<<"These arrays are equal."<<'\n';
 	//}
-	Fixed_Array <int, 5> *f_array= new Fixed_Array <int, 5>();
+	//Fixed_Array <int, 5> *f_array= new Fixed_Array <int, 5>();
 	//Fixed_Array <int, 5> *c_array= new Fixed_Array <int, 5>(5);
 	//f_array=c_array;
 	//for (int i=0; i<(*f_array).size();++i)
@@ -87,10 +87,10 @@ int main()
 		//std::cout<<(*copy_array)[i];
 	//}
 	//std::cout<<'\n';
-	delete f_array;
+	//delete f_array;
 	//delete c_array;
 	//delete copy_array;
-	Stack <int> *myStack= new Stack <int>();
+	//Stack <int> *myStack= new Stack <int>();
 	//(*myStack).pop();
 	//(*myStack).push(5);
 	//Stack <int> *copyStack= new Stack<int>(*myStack);
@@ -114,49 +114,49 @@ int main()
 	//(*copyStack).push(5);
 	//(*copyStack).push(5);
 	//(*copyStack).push(5);
-	delete myStack;
+	//delete myStack;
 	//delete copyStack;
 	//for(int i=0;i<(*copyStack).size();++i)
 	//{
 		//std::cout<<(*copyStack->myArray)[i];
 	//}
-	Queue <int> *myQueue= new Queue <int>();
-	(*myQueue).enqueue(5);
-	Queue <int> *copyQueue= new Queue<int>(*myQueue);
-	for(int i=0;i<(*copyQueue->myArray).size();++i)
-	{
-		std::cout<<(*copyQueue->myArray)[i]<<'\n';
-	}
-	(*copyQueue).dequeue();
-	if((*copyQueue).is_empty()==true)
-	{
-		std::cout<<"Something is wrong"<<'\n';
-	}
-	(*copyQueue).enqueue(5);
-	(*copyQueue).enqueue(5);
-	std::cout<<(*copyQueue).size()<<'\n';
-	(*copyQueue).clear();
-	for(int i=0;i<(*copyQueue->myArray).size();++i)
-	{
-		std::cout<<(*copyQueue->myArray)[i]<<'\n';
-	}
-	(*copyQueue).enqueue(0);
-	(*copyQueue).dequeue();
-	(*copyQueue).enqueue(1);
-	(*copyQueue).enqueue(2);
-	(*copyQueue).enqueue(3);
-	(*copyQueue).enqueue(4);
+	//Queue <int> *myQueue= new Queue <int>();
+	//(*myQueue).enqueue(5);
+	//Queue <int> *copyQueue= new Queue<int>(*myQueue);
+	//for(int i=0;i<(*copyQueue->myArray).size();++i)
+	//{
+		//std::cout<<(*copyQueue->myArray)[i]<<'\n';
+	//}
+	//(*copyQueue).dequeue();
+	//if((*copyQueue).is_empty()==true)
+	//{
+		//std::cout<<"Something is wrong"<<'\n';
+	//}
+	//(*copyQueue).enqueue(5);
+	//(*copyQueue).enqueue(5);
+	//std::cout<<(*copyQueue).size()<<'\n';
+	//(*copyQueue).clear();
+	//for(int i=0;i<(*copyQueue->myArray).size();++i)
+	//{
+		//std::cout<<(*copyQueue->myArray)[i]<<'\n';
+	//}
+	//(*copyQueue).enqueue(0);
+	//(*copyQueue).dequeue();
+	//(*copyQueue).enqueue(1);
+	//(*copyQueue).enqueue(2);
+	//(*copyQueue).enqueue(3);
+	//(*copyQueue).enqueue(4);
 	//(*copyQueue).enqueue(5);
 	//(*copyQueue).enqueue(6);
 	//(*copyQueue).enqueue(7);
 	//(*copyQueue).enqueue(8);
 	//(*copyQueue).enqueue(9);
 	//(*copyQueue).enqueue(0);
-	for(int i=0;i<(*copyQueue->myArray).size();++i)
-	{
-		std::cout<<(*copyQueue->myArray)[i];
-	}
-	delete myQueue;
-	delete copyQueue;
+	//for(int i=0;i<(*copyQueue->myArray).size();++i)
+	//{
+		//std::cout<<(*copyQueue->myArray)[i];
+	//}
+	//delete myQueue;
+	//delete copyQueue;
 	return 0;	
 }
