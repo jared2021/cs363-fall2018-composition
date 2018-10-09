@@ -30,6 +30,9 @@ public:
 	 */
   Fixed_Array (const Fixed_Array <T, N> & arr);
 	
+  // COMMENT This method should be removed since it was part of the
+  // original bad design.
+  
   /**
    * Initializing constructor. The source array can be of any size
    * as long as they are of the same type.
@@ -57,6 +60,9 @@ public:
    */
   const Fixed_Array & operator = (const Fixed_Array <T, N> & rhs);
 
+  // COMMENT This method should be removed since it was part of the
+  // original bad design.
+  
   /**
    * Assignment operator
    *

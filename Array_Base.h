@@ -8,6 +8,9 @@
 
 #include <cstring>
 #include <stdexcept>
+
+// COMMENT Do not place implementation code directly in the header file.
+
 template<typename T>
 class Array_Base
 {

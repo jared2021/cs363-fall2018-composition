@@ -39,6 +39,8 @@ Stack <T>::~Stack (void)
 template <typename T>
 void Stack <T>::push (T element)
 {
+  // COMMENT The stack should be allowed to grow if no more space.
+  
 	if((*this->myArray).size()!=(*this->myArray).max_size())
 	{
 		(*myArray).set((*this->myArray).size(),element);

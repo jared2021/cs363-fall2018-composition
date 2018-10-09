@@ -108,6 +108,11 @@ public:
   /// Remove all elements from the stack.
   void clear (void);
 
+  // COMMENT This should be in your private section.
+  
+  // COMMENT There is no need to allocate the array on the heap. Always try to
+  // allocate on the stack to reduce the complexity of your code.
+  
   Array<T> *myArray;
 
 private:
