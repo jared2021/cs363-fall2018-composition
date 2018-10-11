@@ -36,6 +36,8 @@ Queue <T>::~Queue (void)
 template <typename T>
 void Queue <T>:: enqueue (T element)
 {
+  // COMMENT The queue should grow if it out of space.
+
 	if(last_==(*this->myArray).max_size()-1&&first_==0)
 	{
 		std::out_of_range("Queue is full");
@@ -44,6 +46,9 @@ void Queue <T>:: enqueue (T element)
 	{
 		std::out_of_range("Queue is full");
 	}
+  
+  // COMMENT You could use the % operator to simplify your indexing algorithm.
+  
 	else if(last_==(*this->myArray).max_size()-1&&first_!=0)
 	{
 		(*this->myArray).set(0,element);
