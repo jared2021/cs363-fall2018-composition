@@ -36,28 +36,28 @@ template <typename T>
 void Queue <T>:: enqueue (T element)
 {
   // COMMENT The queue should grow if it out of space.
-
+  // RESPONSE queue now grows if it runs out of space.
 	if(last_==(myArray).max_size()-1&&first_==0)
 	{
-		std::out_of_range("Queue is full");
+		(myArray).resize((myArray).max_size_+1);
+		(myArray).set(last_%(myArray).max_size(),element);
+		last_=last+1;
+		size_=size+1;
 	}
 	else if(last_==first_-1)
 	{
-		std::out_of_range("Queue is full");
+		(myArray).resize((myArray).max_size_+1);
+		last_=size-1;
+		(myArray).set(last_%(myArray).max-size(),element);
+		last_=last+1;
+		size_=size+1;
 	}
   
   // COMMENT You could use the % operator to simplify your indexing algorithm.
-  
-	else if(last_==(myArray).max_size()-1&&first_!=0)
-	{
-		(myArray).set(0,element);
-		last_=0;
-		size_=size_+1;
-		(myArray).set_size((myArray).size()+1);
-	}
+  // RESPONSE Added % to simplify indexing algorithm. 
 	else
 	{
-		(myArray).set(last_,element);
+		(myArray).set(last_%(myArray).max_size(),element);
 		last_=last_+1;
 		size_=size_+1;
 		(myArray).set_size((myArray).size()+1);
