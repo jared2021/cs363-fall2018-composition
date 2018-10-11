@@ -9,7 +9,6 @@
 //
 template <typename T>
 Stack <T>::Stack (void)
-:myArray(new Array<T>)
 {
 		
 }
@@ -19,7 +18,7 @@ Stack <T>::Stack (void)
 //
 template <typename T>
 Stack <T>::Stack (const Stack & stack)
-:myArray(new Array<T> (*stack.myArray))
+:myArray(stack.myArray)
 {
 	
 }
@@ -30,7 +29,7 @@ Stack <T>::Stack (const Stack & stack)
 template <typename T>
 Stack <T>::~Stack (void)
 {
-	delete myArray;		
+		
 }
 
 //
@@ -40,15 +39,18 @@ template <typename T>
 void Stack <T>::push (T element)
 {
   // COMMENT The stack should be allowed to grow if no more space.
-  
-	if((*this->myArray).size()!=(*this->myArray).max_size())
+  // RESPONSE Stack can now grow if it has no more space.
+
+	if((myArray).size()!=(myArray).max_size())
 	{
-		(*myArray).set((*this->myArray).size(),element);
-		(*myArray).set_size((*this->myArray).size()+1);
+		(myArray).set((myArray).size(),element);
+		(myArray).set_size((myArray).size()+1);
 	}
-	else if ((*this->myArray).size()==(*this->myArray).max_size())
+	else if ((myArray).size()==(myArray).max_size())
 	{
-		throw std::out_of_range("Stack is full cannot push any more.");
+		(myArray).resize((myArray).max_size()+1);
+		(myArray).set((myArray).size(),element);
+		(myArray).set_size((myArray).size()+1);
 	}
 }
 //
@@ -57,9 +59,9 @@ void Stack <T>::push (T element)
 template <typename T>
 void Stack <T>::pop (void)
 {
-	if((*this->myArray).size()!=0)
+	if((myArray).size()!=0)
 	{
-		(*this->myArray).set_size((*this->myArray).size()-1);
+		(myArray).set_size((myArray).size()-1);
 	}
 	else
 	{
@@ -78,9 +80,9 @@ const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 	}
 	else
 	{
-		for(int i=0;i<(*this->myArray).cur_size_;++i)
+		for(int i=0;i<(myArray).cur_size_;++i)
 		{
-			(*this->myArray).data_[i]=(rhs).data_[i];
+			(myArray).data_[i]=(rhs).data_[i];
 		}
 		return *this;
 	}
@@ -92,5 +94,5 @@ const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 template <typename T>
 void Stack <T>::clear (void)
 {
-	(*this->myArray).cur_size_=0;
+	(myArray).cur_size_=0;
 }

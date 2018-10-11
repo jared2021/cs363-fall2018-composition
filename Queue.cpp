@@ -39,18 +39,18 @@ void Queue <T>:: enqueue (T element)
   // RESPONSE queue now grows if it runs out of space.
 	if(last_==(myArray).max_size()-1&&first_==0)
 	{
-		(myArray).resize((myArray).max_size_+1);
+		(myArray).resize((size_+2));
 		(myArray).set(last_%(myArray).max_size(),element);
-		last_=last+1;
-		size_=size+1;
+		last_=last_+1;
+		size_=size_+1;
 	}
 	else if(last_==first_-1)
 	{
-		(myArray).resize((myArray).max_size_+1);
-		last_=size-1;
-		(myArray).set(last_%(myArray).max-size(),element);
-		last_=last+1;
-		size_=size+1;
+		(myArray).resize((size_+2));
+		last_=size_-1;
+		(myArray).set(last_%(myArray).max_size(),element);
+		last_=last_+1;
+		size_=size_+1;
 	}
   
   // COMMENT You could use the % operator to simplify your indexing algorithm.

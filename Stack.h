@@ -109,15 +109,16 @@ public:
   void clear (void);
 
   // COMMENT This should be in your private section.
-  
+  // RESPONSE Array now in private section.
+
   // COMMENT There is no need to allocate the array on the heap. Always try to
   // allocate on the stack to reduce the complexity of your code.
-  
-  Array<T> *myArray;
+  // RESPONSE Array now allocated on the stack.
 
 private:
   // add member variable here
-
+  
+  Array<T> myArray;
 };
 
 // include the inline files
