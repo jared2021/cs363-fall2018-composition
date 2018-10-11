@@ -5,6 +5,12 @@
 #include "Queue.h"
 int main()
 {
+	Array <int> test_array(5,1);
+	for(int i=0; i<(test_array).size();++i)
+	{
+		std::cout<<test_array[i];
+	}
+	std::cout<<'\n';
 	Array <int> *int_array=new Array <int>(5,1);
 	std::cout<<(*int_array).size()<<'\n';
 	for(int i=0; i<(*int_array).size();++i)
@@ -55,18 +61,23 @@ int main()
 	(*stack).pop();
 	Queue <int> *queue= new Queue <int> ();
 	(*queue).enqueue(5);
-	for(int i=0;i<(*queue->myArray).size();++i)
-	{
-		std::cout<<(*queue->myArray).get(i);
-	}
+	//for(int i=0;i<(*queue).size();++i)
+	//{
+		//std::cout<<(*queue).get(i);
+	//}
 	Queue <int> *copy_queue= new Queue <int> (*queue);
-	for (int i=0;i<(*copy_queue->myArray).size();++i)
-	{
-		std::cout<<(*copy_queue->myArray).get(i);
-	}
+	//for (int i=0;i<(*copy_queue).size();++i)
+	//{
+		//std::cout<<(*copy_queue->myArray).get(i);
+	//}
 	std::cout<<"Queue copy worked."<<'\n';
-	std::cout<<'\n';
 	(*queue).dequeue();
+	(*queue).enqueue(4);
+	//for(int i=0;i<(*queue).size();++i)
+	//{
+		//std::cout<<(*queue->myArray).get(i);
+	//}
+	std::cout<<"Enqueue worked."<<'\n';
 	delete int_array;
 	delete copy_array;
 	delete fixed_array;

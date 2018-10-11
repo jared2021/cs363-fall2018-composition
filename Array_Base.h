@@ -10,6 +10,7 @@
 #include <stdexcept>
 
 // COMMENT Do not place implementation code directly in the header file.
+// RESPONSE Removed implementation from header file and placed it in a seperate C++ file.
 
 template<typename T>
 class Array_Base

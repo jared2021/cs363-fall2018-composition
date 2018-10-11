@@ -64,14 +64,16 @@ public:
   void clear();
 
   // COMMENT This variable should be in your private section.
-  
+  // RESPONSE myArray now in private section.
+
   // COMMENT There is no need to allocate the array on the heap. Always try to
   // allocate on the stack to reduce the complexity of your code.
-  
-  Array<T> *myArray;
+  // RESPONSE Array is now located on the stack. 
 
 private:
-  
+
+  Array<T> myArray;
+
   int first_;
 
   int last_;
