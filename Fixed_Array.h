@@ -32,15 +32,7 @@ public:
 	
   // COMMENT This method should be removed since it was part of the
   // original bad design.
-  
-  /**
-   * Initializing constructor. The source array can be of any size
-   * as long as they are of the same type.
-   *
-   * @param[in]      arr        Source array
-   */
-  template <size_t M>
-  Fixed_Array (const Fixed_Array <T, M> & arr);
+  // RESPONSE Removed method.
 
   /**
    * Initializing constructor. Fills the contents of the 
@@ -62,14 +54,8 @@ public:
 
   // COMMENT This method should be removed since it was part of the
   // original bad design.
-  
-  /**
-   * Assignment operator
-   *
-   * @param[in]      rhs        Right-hand side of operator.
-   */
-  template <size_t M>
-  const Fixed_Array & operator = (const Fixed_Array <T, M> & rhs);
+  // RESPONSE Removed method.
+
 };
 
 // include the inline files
