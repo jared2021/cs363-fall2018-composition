@@ -72,6 +72,8 @@ int main()
 	delete fixed_array;
 	delete copy_fixed_array;
 	delete stack;
+	delete copy_stack;
 	delete queue;
+	delete copy_queue;
 	return 0;	
 }
