@@ -132,7 +132,7 @@ int Array_Base<T>::find (T element)const
 			i=i+i;
 		}
 	}
-	if(found==false)
+	if(!found)
 	{
 		return -1;
 	}
@@ -163,7 +163,7 @@ int Array_Base<T>::find (T element, size_t start)const
 				i=i+1;
 			}
 		}
-		if(found==false)
+		if(!found)
 		{
 			return -1;
 		}
