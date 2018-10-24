@@ -1,6 +1,4 @@
 #include <iostream>
-#include "Array.h"
-#include "Fixed_Array.h"
 #include "Stack.h"
 #include "Queue.h"
 int main()
@@ -32,18 +30,6 @@ int main()
 	{
 		std::cout<<"There is something wrong here."<<'\n';
 	}
-	Fixed_Array <int,5> *fixed_array= new Fixed_Array <int,5>(5);
-	for(int i=0;i<(*fixed_array).size();++i)
-	{
-		std::cout<<(*fixed_array).get(i);
-	}
-	std::cout<<"\n";
-	Fixed_Array <int,5> *copy_fixed_array= new Fixed_Array <int,5>(*fixed_array);
-	for (int i=0;i<(*copy_fixed_array).size();++i)
-	{
-		std::cout<<(*fixed_array).get(i);
-	}
-	std::cout<<'\n';
 	Stack <int> *stack= new Stack <int> ();
 	(*stack).push(5);
 	std::cout<<"Pushing a 5 onto the stack."<<'\n';
@@ -80,8 +66,6 @@ int main()
 	std::cout<<"Enqueue worked."<<'\n';
 	delete int_array;
 	delete copy_array;
-	delete fixed_array;
-	delete copy_fixed_array;
 	delete stack;
 	delete copy_stack;
 	delete queue;

@@ -1,234 +1,183 @@
-==191003== Memcheck, a memory error detector
-==191003== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==191003== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==191003== Command: ./assignment2
-==191003== Parent PID: 161555
-==191003== 
-==191003== Conditional jump or move depends on uninitialised value(s)
-==191003==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x400FB2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401881: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x400FB2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a1c0 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x400FB2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid read of size 4
-==191003==    at 0x400FCD: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a1c0 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x400FB2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Conditional jump or move depends on uninitialised value(s)
-==191003==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018FA: Fixed_Array<int, 5ul>::Fixed_Array(Fixed_Array<int, 5ul> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4010DC: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401881: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018FA: Fixed_Array<int, 5ul>::Fixed_Array(Fixed_Array<int, 5ul> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4010DC: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a320 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018FA: Fixed_Array<int, 5ul>::Fixed_Array(Fixed_Array<int, 5ul> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4010DC: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401925: Fixed_Array<int, 5ul>::Fixed_Array(Fixed_Array<int, 5ul> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4010DC: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a320 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018FA: Fixed_Array<int, 5ul>::Fixed_Array(Fixed_Array<int, 5ul> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4010DC: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Conditional jump or move depends on uninitialised value(s)
-==191003==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019A4: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401141: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401A5C: Array_Base<int>::set(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401158: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a3c0 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019A4: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401141: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Conditional jump or move depends on uninitialised value(s)
-==191003==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018BA: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4011E0: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid read of size 4
-==191003==    at 0x40187A: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018BA: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4011E0: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a3c0 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019A4: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401141: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401881: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018BA: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4011E0: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a460 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018BA: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4011E0: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Conditional jump or move depends on uninitialised value(s)
-==191003==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019B2: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401227: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401A5C: Array_Base<int>::set(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401BF8: Queue<int>::enqueue(int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401234: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a510 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019B2: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401227: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Conditional jump or move depends on uninitialised value(s)
-==191003==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018D0: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40124D: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid read of size 4
-==191003==    at 0x40187A: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018D0: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40124D: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a510 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019B2: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401227: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401881: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018D0: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40124D: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a5c0 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401850: Array_Base<int>::Array_Base(Array_Base<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018A0: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4018D0: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40124D: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid read of size 4
-==191003==    at 0x4016A9: Queue<int>::dequeue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40127F: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a510 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019B2: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401227: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Invalid write of size 4
-==191003==    at 0x401A5C: Array_Base<int>::set(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401BF8: Queue<int>::enqueue(int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40128C: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a514 is 4 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019B2: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401227: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Mismatched free() / delete / delete []
-==191003==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
-==191003==    by 0x401446: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401462: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40148C: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4012C4: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a100 is 0 bytes inside a block of size 20 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x4017A0: Array_Base<int>::Array_Base(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4017DC: Array<int>::Array(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x400F25: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Mismatched free() / delete / delete []
-==191003==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
-==191003==    by 0x401446: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40147E: Fixed_Array<int, 5ul>::~Fixed_Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4014A0: Fixed_Array<int, 5ul>::~Fixed_Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4012E2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a260 is 0 bytes inside a block of size 20 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x4017A0: Array_Base<int>::Array_Base(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4017FD: Fixed_Array<int, 5ul>::Fixed_Array(int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401077: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Mismatched free() / delete / delete []
-==191003==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
-==191003==    by 0x401446: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401462: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40174E: Stack<int>::~Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4012FE: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a3c0 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019A4: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401141: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Mismatched free() / delete / delete []
-==191003==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
-==191003==    by 0x401446: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401462: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40175C: Queue<int>::~Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x40132F: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a510 is 0 bytes after a block of size 0 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x401976: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4019B2: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401227: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== Mismatched free() / delete / delete []
-==191003==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
-==191003==    by 0x401446: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x401462: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4013E7: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==  Address 0x604a040 is 0 bytes inside a block of size 20 alloc'd
-==191003==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
-==191003==    by 0x4017A0: Array_Base<int>::Array_Base(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x4017DC: Array<int>::Array(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003==    by 0x400EB1: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
-==191003== 
-==191003== 
-==191003== HEAP SUMMARY:
-==191003==     in use at exit: 0 bytes in 0 blocks
-==191003==   total heap usage: 17 allocs, 17 frees, 348 bytes allocated
-==191003== 
-==191003== All heap blocks were freed -- no leaks are possible
-==191003== 
-==191003== For counts of detected and suppressed errors, rerun with: -v
-==191003== Use --track-origins=yes to see where uninitialised values come from
-==191003== ERROR SUMMARY: 43 errors from 23 contexts (suppressed: 0 from 0)
+==139747== Memcheck, a memory error detector
+==139747== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==139747== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==139747== Command: ./assignment2
+==139747== Parent PID: 131656
+==139747== 
+==139747== Conditional jump or move depends on uninitialised value(s)
+==139747==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x400FA2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid write of size 4
+==139747==    at 0x4014EB: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x400FA2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a1c0 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x400FA2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid read of size 4
+==139747==    at 0x400FBD: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a1c0 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x400FA2: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Conditional jump or move depends on uninitialised value(s)
+==139747==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401722: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401062: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid write of size 4
+==139747==    at 0x4017DA: Array_Base<int>::set(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401079: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a260 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401722: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401062: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Conditional jump or move depends on uninitialised value(s)
+==139747==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401518: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4010FF: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid read of size 4
+==139747==    at 0x4014E4: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401518: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4010FF: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a260 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401722: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401062: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid write of size 4
+==139747==    at 0x4014EB: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401518: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4010FF: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a300 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401518: Stack<int>::Stack(Stack<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4010FF: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Conditional jump or move depends on uninitialised value(s)
+==139747==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401730: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401146: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid write of size 4
+==139747==    at 0x4017DA: Array_Base<int>::set(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401A18: Queue<int>::enqueue(int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401153: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a3b0 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401730: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401146: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Conditional jump or move depends on uninitialised value(s)
+==139747==    at 0x4C2A81E: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4015C4: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x40116B: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid read of size 4
+==139747==    at 0x4014E4: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4015C4: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x40116B: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a3b0 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401730: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401146: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid write of size 4
+==139747==    at 0x4014EB: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4015C4: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x40116B: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a460 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4014BA: Array<int>::Array(Array<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4015C4: Queue<int>::Queue(Queue<int> const&) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x40116B: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid read of size 4
+==139747==    at 0x401601: Queue<int>::dequeue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x40119D: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a3b0 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401730: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401146: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Invalid write of size 4
+==139747==    at 0x4017DA: Array_Base<int>::set(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401A18: Queue<int>::enqueue(int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4011AA: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a3b4 is 4 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401730: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401146: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Mismatched free() / delete / delete []
+==139747==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
+==139747==    by 0x401316: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401332: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401340: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4011E3: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a100 is 0 bytes inside a block of size 20 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x40139E: Array<int>::Array(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x400F15: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Mismatched free() / delete / delete []
+==139747==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
+==139747==    by 0x401316: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401332: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4016A6: Stack<int>::~Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4011FF: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a260 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401722: Stack<int>::Stack() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401062: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Mismatched free() / delete / delete []
+==139747==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
+==139747==    by 0x401316: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401332: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4016B4: Queue<int>::~Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401229: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a3b0 is 0 bytes after a block of size 0 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x4016F4: Array<int>::Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401730: Queue<int>::Queue() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401146: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== Mismatched free() / delete / delete []
+==139747==    at 0x4C2B16D: operator delete(void*) (vg_replace_malloc.c:576)
+==139747==    by 0x401316: Array_Base<int>::~Array_Base() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x401332: Array<int>::~Array() (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x4012B8: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==  Address 0x604a040 is 0 bytes inside a block of size 20 alloc'd
+==139747==    at 0x4C2A888: operator new[](unsigned long) (vg_replace_malloc.c:423)
+==139747==    by 0x40139E: Array<int>::Array(unsigned long, int) (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747==    by 0x400EA1: main (in /home/jascho/cs36300-fall2018-composition/assignment2)
+==139747== 
+==139747== 
+==139747== HEAP SUMMARY:
+==139747==     in use at exit: 0 bytes in 0 blocks
+==139747==   total heap usage: 13 allocs, 13 frees, 264 bytes allocated
+==139747== 
+==139747== All heap blocks were freed -- no leaks are possible
+==139747== 
+==139747== For counts of detected and suppressed errors, rerun with: -v
+==139747== Use --track-origins=yes to see where uninitialised values come from
+==139747== ERROR SUMMARY: 30 errors from 19 contexts (suppressed: 0 from 0)
