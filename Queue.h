@@ -63,6 +63,8 @@ public:
    */
   void clear();
 
+  void print(void);
+
   // COMMENT This variable should be in your private section.
   // RESPONSE myArray now in private section.
 

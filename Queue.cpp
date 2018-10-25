@@ -122,10 +122,20 @@ const Queue<T> & Queue <T>::operator = (const Queue & rhs)
 	}
 	else
 	{
-		for(int i=0;i<(myArray).cur_size_;++i)
+		for(int i=0;i<(myArray).size();++i)
 		{
 			(myArray).data_[i]=(rhs).data_[i];
 		}
 		return *this;
 	}
+}
+
+template <typename T>
+void Queue <T>::print(void)
+{
+	for(int i=first_;i<(myArray).size();++i)
+	{
+		std::cout<<(myArray).get(i);
+	}
+	std::cout<<'\n';
 }
