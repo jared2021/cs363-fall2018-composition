@@ -80,7 +80,7 @@ const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 	}
 	else
 	{
-		for(int i=0;i<(myArray).cur_size_;++i)
+		for(int i=0;i<(myArray).size();++i)
 		{
 			(myArray).data_[i]=(rhs).data_[i];
 		}
@@ -95,4 +95,13 @@ template <typename T>
 void Stack <T>::clear (void)
 {
 	(myArray).cur_size_=0;
+}
+
+template <typename T>
+void Stack <T>::print(void)
+{
+	for(int i=0;i<(myArray).size();++i)
+	{
+		std::cout<<(myArray).get(i);
+	}
 }

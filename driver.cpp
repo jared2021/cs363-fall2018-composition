@@ -33,10 +33,7 @@ int main()
 	Stack <int> *stack= new Stack <int> ();
 	(*stack).push(5);
 	std::cout<<"Pushing a 5 onto the stack."<<'\n';
-	//for(int i=0;i<(*stack->myArray).size();++i)
-	//{
-		//std::cout<<(*stack->myArray).get(i);
-	//}
+	(*stack).print();
 	std::cout<<'\n';
 	Stack <int> *copy_stack= new Stack <int>(*stack);
 	//for (int i=0; i<(*copy_stack->myArray).size();++i)

@@ -108,6 +108,8 @@ public:
   /// Remove all elements from the stack.
   void clear (void);
 
+  void print(void);
+
   // COMMENT This should be in your private section.
   // RESPONSE Array now in private section.
 
