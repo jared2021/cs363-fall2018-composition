@@ -124,7 +124,7 @@ const Queue<T> & Queue <T>::operator = (const Queue & rhs)
 	{
 		for(int i=0;i<(myArray).size();++i)
 		{
-			(myArray).data_[i]=(rhs).data_[i];
+			(myArray).set(i,(rhs).myArray.data(i));
 		}
 		return *this;
 	}

@@ -21,5 +21,25 @@ int main()
 	(*stack).print();
 	delete stack;
 	delete copy_stack;
+	Queue <int> *queue= new Queue <int> ();
+	(*queue).enqueue(5);
+	std::cout<<"Enqueued a 5.";
+	(*queue).print();
+	(*queue).dequeue();
+	std::cout<<"Dequeued a 5";
+	(*queue).print();
+	if((*queue).is_empty())
+	{
+		std::cout<<"Queue is empty."<<'\n';
+	}
+	(*queue).enqueue(4);
+	(*queue).enqueue(3);
+	(*queue).print();
+	(*queue).clear();
+	(*queue).print();
+	Queue <int> *test_queue= new Queue <int> ();
+	(*test_queue)=(*queue);
+	(*test_queue).print();
+	delete queue;
 	return 0;	
 }

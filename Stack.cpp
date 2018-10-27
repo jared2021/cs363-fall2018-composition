@@ -82,7 +82,7 @@ const Stack <T> & Stack <T>::operator = (const Stack & rhs)
 	{
 		for(int i=0;i<(myArray).size();++i)
 		{
-			(myArray).get(i)=(rhs).myArray.data(i);
+			(myArray).set(i,(rhs).myArray.data(i));
 		}
 		return *this;
 	}
