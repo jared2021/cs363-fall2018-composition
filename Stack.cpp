@@ -57,11 +57,12 @@ void Stack <T>::push (T element)
 // pop
 //
 template <typename T>
-void Stack <T>::pop (void)
+T Stack <T>::pop (void)
 {
 	if((myArray).size()!=0)
 	{
 		(myArray).set_size((myArray).size()-1);
+		return (myArray).get((myArray).size()+1);		
 	}
 	else
 	{

@@ -41,5 +41,17 @@ int main()
 	(*test_queue)=(*queue);
 	(*test_queue).print();
 	delete queue;
+
+	std::cout<<"Test two";
+	Stack <int> *test_stack= new Stack <int> ();
+	(*test_stack).push(5);
+	(*test_stack).push(4);
+	(*test_stack).push(3);
+	(*test_stack).push(2);
+	(*test_stack).push(1);
+	(*test_stack).print();
+	int a=(*test_stack).pop();
+	std::cout<<a<<'\n';
+	(*test_stack).print();
 	return 0;	
 }
