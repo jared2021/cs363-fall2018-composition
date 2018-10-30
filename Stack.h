@@ -119,7 +119,9 @@ public:
 
 private:
   // add member variable here
-  
+ 
+  int top_;
+
   Array<T> myArray;
 };
 

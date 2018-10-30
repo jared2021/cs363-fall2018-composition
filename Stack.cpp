@@ -9,6 +9,7 @@
 //
 template <typename T>
 Stack <T>::Stack (void)
+:top_(0)
 {
 		
 }
@@ -18,7 +19,8 @@ Stack <T>::Stack (void)
 //
 template <typename T>
 Stack <T>::Stack (const Stack & stack)
-:myArray(stack.myArray)
+:myArray(stack.myArray),
+ top_(stack.top_)
 {
 	
 }
@@ -41,16 +43,18 @@ void Stack <T>::push (T element)
   // COMMENT The stack should be allowed to grow if no more space.
   // RESPONSE Stack can now grow if it has no more space.
 
-	if((myArray).size()!=(myArray).max_size())
+	if(top_!=(myArray).max_size())
 	{
-		(myArray).set((myArray).size(),element);
-		(myArray).set_size((myArray).size()+1);
+		(myArray).set(top_,element);
+		top_=top_+1;
+		(myArray).set_size(top_);
 	}
-	else if ((myArray).size()==(myArray).max_size())
+	else if (top_==(myArray).max_size())
 	{
 		(myArray).resize((myArray).max_size()+1);
-		(myArray).set((myArray).size(),element);
-		(myArray).set_size((myArray).size()+1);
+		(myArray).set(top_,element);
+		top_=top_+1;
+		(myArray).set_size(top_);
 	}
 }
 //
@@ -59,10 +63,13 @@ void Stack <T>::push (T element)
 template <typename T>
 T Stack <T>::pop (void)
 {
-	if((myArray).size()!=0)
+	if(top_!=0)
 	{
-		(myArray).set_size((myArray).size()-1);
-		return (myArray).get((myArray).size()+1);		
+		top_=top_-1;
+		std::cout<<"This is the top. "<<top_<<'\n';
+		T temp=(myArray).get(top_);
+		std::cout<<temp<<'\n';
+		return temp;		
 	}
 	else
 	{
@@ -101,7 +108,7 @@ void Stack <T>::clear (void)
 template <typename T>
 void Stack <T>::print(void)
 {
-	for(int i=0;i<(myArray).size();++i)
+	for(int i=0;i<top_;++i)
 	{
 		std::cout<<(myArray).get(i);
 	}
