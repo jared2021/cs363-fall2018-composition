@@ -12,7 +12,7 @@ template <typename T>
 inline
 T Stack <T>::top (void) const
 {
-
+	return (myArray).data(top_);
 }
 
 //
@@ -22,5 +22,12 @@ template <typename T>
 inline
 bool Stack <T>::is_empty (void) const
 {
-
+	if((myArray).size()==0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

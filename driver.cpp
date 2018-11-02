@@ -53,5 +53,15 @@ int main()
 	int a=(*test_stack).pop();
 	std::cout<<a<<'\n';
 	(*test_stack).print();
+	int b=(*test_stack).top();
+	std::cout<<b<<'\n';
+	if((*test_stack).is_empty())
+	{
+		std::cout<<"It's empty.";
+	}
+	else
+	{
+		std::cout<<"It's not empty.";
+	}
 	return 0;	
 }
