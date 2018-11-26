@@ -1,0 +1,22 @@
+Generating 'make' output using default input
+Generation Time: 0s
+make[1]: Entering directory `/home/hilljh/cs363-sandbox/assignment2-lifeline/jascho/cs36300-fall2018-composition'
+rm -rf driver.o
+make[1]: Leaving directory `/home/hilljh/cs363-sandbox/assignment2-lifeline/jascho/cs36300-fall2018-composition'
+make[1]: Entering directory `/home/hilljh/cs363-sandbox/assignment2-lifeline/jascho/cs36300-fall2018-composition'
+g++  -fPIC -O -std=c++11 -D_REENTRANT -c  -o "driver.o" driver.cpp
+g++  -fPIC -O -std=c++11 -D_REENTRANT -L"." driver.o -ldl -lrt -lpthread -o "assignment2"
+driver.o: In function `stack::test_case3(Test_Result&)':
+driver.cpp:(.text+0x60e): undefined reference to `Stack<int>::size() const'
+driver.cpp:(.text+0x61a): undefined reference to `Stack<int>::size() const'
+driver.o: In function `stack::test_case1(Test_Result&)':
+driver.cpp:(.text+0x10c4): undefined reference to `Stack<unsigned long>::size() const'
+driver.cpp:(.text+0x1254): undefined reference to `Stack<unsigned long>::size() const'
+driver.cpp:(.text+0x1377): undefined reference to `Stack<unsigned long>::size() const'
+driver.cpp:(.text+0x1383): undefined reference to `Stack<unsigned long>::size() const'
+driver.o: In function `stack::test_case2(Test_Result&)':
+driver.cpp:(.text+0x19c9): undefined reference to `Stack<unsigned long>::size() const'
+collect2: error: ld returned 1 exit status
+make[1]: *** [assignment2] Error 1
+make[1]: Leaving directory `/home/hilljh/cs363-sandbox/assignment2-lifeline/jascho/cs36300-fall2018-composition'
+make: *** [assignment2] Error 2
